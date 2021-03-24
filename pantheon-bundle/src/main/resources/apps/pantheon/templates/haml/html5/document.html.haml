@@ -1,4 +1,5 @@
 !!! 5
+- # Setting up asset URLs to be appropriate for the current environment
 - portalUrl = 'access.redhat.com'
 
 - if (@document.attr :pantheonenv) == 'dev'
@@ -46,8 +47,6 @@
         nrlk      : "2a497fa56f"
       };
     %script{src:cpDocsJsPath, type:"module"}
-    :javascript
-      chrometwo_require(["#{cpDocsJsPath}"]);
 
     :javascript
       window.addEventListener('load', function() {
