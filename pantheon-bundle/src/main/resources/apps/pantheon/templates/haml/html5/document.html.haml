@@ -11,7 +11,7 @@
   - portalUrl = 'access.stage.redhat.com'
 
 - pantheonCssPath = "//#{portalUrl}/webassets/avalon/j/public_modules/node_modules/@cpelements/cp-documentation/dist/rhdocs.min.css"
-- cpDocsJsPath = "//#{portalUrl}/webassets/avalon/j/public_modules/node_modules/@cpelements/cp-documentation/dist/cp-documentation.umd.js"
+- cpDocsJsPath = "//#{portalUrl}/webassets/avalon/j/public_modules/node_modules/@cpelements/cp-documentation/dist/cp-documentation.js"
 
 
 - wrappingTag = 'cp-documentation'
@@ -45,9 +45,7 @@
         nrid      : "14615289",
         nrlk      : "2a497fa56f"
       };
-    %script(src="https://cdnjs.cloudflare.com/ajax/libs/webcomponentsjs/2.3.0/custom-elements-es5-adapter.js")
-    %script(src="https://cdnjs.cloudflare.com/ajax/libs/webcomponentsjs/2.3.0/webcomponents-bundle.js")
-    %script(src="https://#{portalUrl}/webassets/avalon/j/lib/require.js")
+    %script{src:cpDocsJsPath, type:"module"}
     :javascript
       chrometwo_require(["#{cpDocsJsPath}"]);
 
